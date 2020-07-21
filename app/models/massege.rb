@@ -1,2 +1,0 @@
-class Massege < ApplicationRecord
-end
