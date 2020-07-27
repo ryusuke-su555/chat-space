@@ -1,0 +1,64 @@
+.top
+  .stop
+    .user
+      .user__name
+        ryu
+      .user__btn
+      = link_to "###", class: "user__btn--edit" do
+        = icon('far', 'edit ', class: "user__btn--edit")
+        %span<>
+      = link_to "###", class: "user__btn--set" do
+        = icon('fas', 'cog fa-spin', class: "user__btn--set")
+        %span<>
+
+  .ctop
+    .groupe
+      .groupe__name
+        techcamp
+      .groupe__mem
+        Member：ryu
+    .gedit
+      .gedit__box
+      .gedit__form
+        %form.submit
+        = link_to "###", class: "gedit__form--edit" do
+          Edit
+.middle
+  .smiddle
+    .smiddle__cgrp
+      .smiddle__cgrp--name
+        techcamp
+      .smiddle__cgrp--mes
+        まだメッセージがありません
+  .cmiddle
+    .cmiddlem
+      .mainmes
+        .mainmes__arrive
+          .mainmes__arrive--name
+            ryu
+          .mainmes__arrive--date
+            2020/07/25
+        .mainmes__nmes
+          こんちゃ
+      .mainmes
+        .mainmes__arrive
+          .mainmes__arrive--name
+            ryu
+          .mainmes__arrive--date
+            2020/07/24
+        .mainmes__nmes
+          こんちゃちゃ
+    .cfooter
+      .cfooter__form
+        .cfooter__form--box
+          type a message
+        .cfooter__form--pic
+          %label{class: "cfooter__form--image"}
+            = icon('fas', 'image')
+            %input{type: "file"}
+      .cfooter__fobtn 
+        .cfooter__fobtn--sbox
+        .cfooter__fobtn--send
+          %form.submit
+          = link_to "###", class: "cfooter__fobtn--sbtn" do
+            Send
