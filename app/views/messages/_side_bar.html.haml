@@ -2,12 +2,12 @@
   .stop
     .user
       .user__name
-        ryu
+        = current_user.name
       .user__btn
-      = link_to "###", class: "user__btn--edit" do
+      = link_to "###" do
         = icon('far', 'edit ', class: "user__btn--edit")
         %span<>
-      = link_to "###", class: "user__btn--set" do
+      = link_to edit_user_path(current_user) do
         = icon('fas', 'cog fa-spin', class: "user__btn--set")
         %span<>
 
