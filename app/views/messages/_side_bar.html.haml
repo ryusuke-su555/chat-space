@@ -4,7 +4,7 @@
       .user__name
         = current_user.name
       .user__btn
-      = link_to "###" do
+      = link_to new_group_path do
         = icon('far', 'edit ', class: "user__btn--edit")
         %span<>
       = link_to edit_user_path(current_user) do
@@ -25,11 +25,13 @@
           Edit
 .middle
   .smiddle
-    .smiddle__cgrp
-      .smiddle__cgrp--name
-        techcamp
-      .smiddle__cgrp--mes
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .smiddle__cgrp
+        = link_to '#' do
+          .smiddle__cgrp--name
+            = group.name
+          .smiddle__cgrp--mes
+            まだメッセージがありません
   .cmiddle
     .cmiddlem
       .mainmes
