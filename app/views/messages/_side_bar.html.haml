@@ -1,66 +1,23 @@
-.top
-  .stop
-    .user
-      .user__name
-        = current_user.name
-      .user__btn
-      = link_to new_group_path do
-        = icon('far', 'edit ', class: "user__btn--edit")
-        %span<>
-      = link_to edit_user_path(current_user) do
-        = icon('fas', 'cog fa-spin', class: "user__btn--set")
-        %span<>
-
-  .ctop
-    .groupe
-      .groupe__name
-        techcamp
-      .groupe__mem
-        Member：ryu
-    .gedit
-      .gedit__box
-      .gedit__form
-        %form.submit
-        = link_to "###", class: "gedit__form--edit" do
-          Edit
-.middle
-  .smiddle
-    - current_user.groups.each do |group|
-      .smiddle__cgrp
-        = link_to '#' do
-          .smiddle__cgrp--name
-            = group.name
-          .smiddle__cgrp--mes
-            まだメッセージがありません
-  .cmiddle
-    .cmiddlem
-      .mainmes
-        .mainmes__arrive
-          .mainmes__arrive--name
-            ryu
-          .mainmes__arrive--date
-            2020/07/25
-        .mainmes__nmes
-          こんちゃ
-      .mainmes
-        .mainmes__arrive
-          .mainmes__arrive--name
-            ryu
-          .mainmes__arrive--date
-            2020/07/24
-        .mainmes__nmes
-          こんちゃちゃ
-    .cfooter
-      .cfooter__form
-        .cfooter__form--box
-          type a message
-        .cfooter__form--pic
-          %label{class: "cfooter__form--image"}
-            = icon('fas', 'image')
-            %input{type: "file"}
-      .cfooter__fobtn 
-        .cfooter__fobtn--sbox
-        .cfooter__fobtn--send
-          %form.submit
-          = link_to "###", class: "cfooter__fobtn--sbtn" do
-            Send
+.test
+  .top
+    .stop
+      .user
+        .user__name
+          = current_user.name
+        .user__btn
+        = link_to new_group_path do
+          = icon('far', 'edit ', class: "user__btn--edit")
+          %span<>
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog fa-spin', class: "user__btn--set")
+          %span<>
+  .middle
+    .smiddle
+      - current_user.groups.each do |group|
+        .smiddle__cgrp
+          = link_to group_messages_path(group) do
+            .smiddle__cgrp--name
+              = group.name
+            .smiddle__cgrp--mes
+              = group.show_last_message
+  

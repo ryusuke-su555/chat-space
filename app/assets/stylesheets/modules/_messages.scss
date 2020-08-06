@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+.wrapper{
+  display: flex;
+}
+
 .top{
   display: flex;
 }
@@ -107,17 +111,14 @@
   width: calc(100vw - 300px);
 }
 .cmiddlem{
-  position: relative;
   background-color: #fafafa;
   height:calc(100vh - 190px);
 }
 .mainmes{
   padding-top:35px;
-  margin-bottom: 46px;
-  margin-left:40px;
-  height:65px;
   &__arrive{
     display: flex;
+    margin-left:40px;
     &--name{
       color: #333333;
       font-size: 16px;
@@ -129,35 +130,36 @@
     }
   }
   &__nmes{
+    margin-left:40px;
     color: #434A54;
     font-size: 14px;
     margin-top: 12px;
+    margin-bottom: 46px;
   }
 }
 
 .cfooter{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #d2d2d2;
   width: calc(100vw - 300px);
   height:90px;
   &__form{
     display: flex;
     position: relative;
-    justify-content: space-between;
     align-items: center;
-    margin: 20px 15px 25px 50px;
-    height: 50px;
-    width: calc(100vw - 500px);
-    background-color: white;
     &--box{
-      margin-left: 10px;
+      height: 50px;
+      width: calc(100vw - 500px);
+      margin: 20px 15px 25px 50px;
       font-size: 16px;
       color: #999999;
     }
     &--pic{
       position: absolute;
-      right:10px;
+      right: 25px;
+      bottom: 40px;
     }
     &--image{
       input{display:none;
@@ -165,25 +167,12 @@
   }
 }
   &__fobtn{
-    display: flex;
-    position: relative;
-    align-items: center;
     margin-right:40px;
-    &--sbox{
-      height:50px;
-      width:100px;
-      border: 1px solid #38aef0;
-      background-color: #38aef0;
-    }
-    &--send{
-      position: absolute;
-      align-items: center;
-      margin:0 30px;
-      color: #fff;
-      font-size:16px;
-    }
-    &--sbtn{
-      text-decoration: none;
-    }
+    height:50px;
+    width:100px;
+    border: 1px solid #38aef0;
+    background-color: #38aef0;
+    color: #fff;
+    font-size:16px;
   }
 }

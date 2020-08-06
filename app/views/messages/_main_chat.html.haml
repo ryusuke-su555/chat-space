@@ -1,2 +1,28 @@
-.Top
-  .main__top
+.test
+  .top
+    .ctop
+      .groupe
+        .groupe__name
+          = @group.name
+        .groupe__mem
+          Member:
+          - @group.users.each do |user|
+            = user.name
+      .gedit
+        .gedit__box
+        .gedit__form
+          %form.submit
+          = link_to edit_group_path(@group), class: "gedit__form--edit" do
+            Edit
+  .cmiddle
+    .cmiddlem
+      .mainmes
+        = render @messages
+  .cfooter
+    = form_with model: [@group, @message], html: {class: "cfooter"}, local: true do |f|
+      .cfooter__form
+        = f.text_field :content, class: 'cfooter__form--box', placeholder: 'type a message'
+        = f.label :image, class: 'cfooter__form--image' do
+          = icon('far', 'image', class: 'cfooter__form--pic')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'cfooter__fobtn'
