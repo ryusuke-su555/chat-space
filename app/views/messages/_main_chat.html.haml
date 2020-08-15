@@ -19,7 +19,7 @@
       .mainmes
         = render @messages
   .cfooter
-    = form_with model: [@group, @message], html: {class: "cfooter"}, local: true do |f|
+    = form_with model: [@group, @message], html: {class: "cfooter", id: "form-cfooter"}, local: true do |f|
       .cfooter__form
         = f.text_field :content, class: 'cfooter__form--box', placeholder: 'type a message'
         = f.label :image, class: 'cfooter__form--image' do
