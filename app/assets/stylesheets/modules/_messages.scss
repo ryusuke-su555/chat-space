@@ -109,12 +109,14 @@
 
 .cmiddle{
   width: calc(100vw - 300px);
+  height:calc(100vh - 190px);
+  overflow: scroll;
 }
 .cmiddlem{
   background-color: #fafafa;
-  height:calc(100vh - 190px);
 }
 .mainmes{
+  background-color: #fafafa;
   padding-top:35px;
   &__arrive{
     display: flex;
@@ -134,7 +136,7 @@
     color: #434A54;
     font-size: 14px;
     margin-top: 12px;
-    margin-bottom: 46px;
+    padding-bottom: 46px;
   }
 }
 
@@ -154,7 +156,7 @@
       width: calc(100vw - 500px);
       margin: 20px 15px 25px 50px;
       font-size: 16px;
-      color: #999999;
+      color: black;
     }
     &--pic{
       position: absolute;
