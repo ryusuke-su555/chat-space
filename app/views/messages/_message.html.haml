@@ -1,10 +1,11 @@
-.mainmes__arrive{data: {message: {id: message.id}}}
-  .mainmes__arrive--name
-    = message.user.name
-  .mainmes__arrive--date
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.mainmes__nmes
-  - if message.content.present?
-    %p.Message__content
-      = message.content
-  = image_tag message.image.url, class: 'Message__image' if message.image.present?
+.mainmes{data: {message: {id: message.id}}}
+  .mainmes__arrive
+    .mainmes__arrive--name
+      = message.user.name
+    .mainmes__arrive--date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .mainmes__nmes
+    - if message.content.present?
+      %p.Message__content
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
