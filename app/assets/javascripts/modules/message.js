@@ -54,13 +54,13 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.cmiddle').append(html);    
+      $('form')[0].reset();
       $('.cmiddle').animate({ scrollTop: $('.cmiddle')[0].scrollHeight});  
-      $('#form-cfooter')[0].reset();
+      $('#form-cfooter').prop("disabled", false);
     })
     .fail(function() {
       alert('メッセージを送信できません');
+      $('#form-cfooter').prop("disabled", false);
     });
-  return false;
-    // console.logを用いてイベント発火しているか確認
   });
 });

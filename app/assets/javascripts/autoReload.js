@@ -39,6 +39,7 @@ $(function(){
       return html;
     };
   }
+
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_message_id = $('.MessageBox:last').data("message-id") || 0;
@@ -61,8 +62,8 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         //メッセージが入ったHTMLに、入れ物ごと追加          $('.MessageField').append(insertHTML);
-        $('.MessageField').animate({ scrollTop: 
-        $('.MessageField')[0].scrollHeight});
+        $('.MessageField').append(insertHTML);
+        $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
       }
     })
     .fail(function() {
