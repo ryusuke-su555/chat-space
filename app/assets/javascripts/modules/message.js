@@ -36,9 +36,10 @@ $(function(){
           </p>
         </div>
       </div>`
-    return html;
-  };
-}
+      return html;
+    };
+  }
+
   $('#form-cfooter').on('submit', function(e){
     e.preventDefault()
     let formData = new FormData(this);
@@ -53,10 +54,10 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.cmiddle').append(html);    
+      $('.cmiddle').append(html);
       $('#form-cfooter')[0].reset();
       $('.cmiddle').animate({ scrollTop: $('.cmiddle')[0].scrollHeight});  
-      $('.cfooter').prop("disabled", false);
+      $('.cfooter__fobtn').prop("disabled", false);
     })
     .fail(function() {
       alert('メッセージを送信できません');
