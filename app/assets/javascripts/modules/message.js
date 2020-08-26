@@ -2,6 +2,25 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
+        `<div class="mainmes" data-message-id=${message.id}>
+          <div class="mainmes__arrive">
+            <div class="mainmes__arrive--name">
+              ${message.user_name}
+            </div>
+            <div class="mainmes__arrive--date">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="mainmes__nmes">
+            <p class="Message__content">
+              ${message.content}
+            </p>
+            <img class="Message__image" src="${message.image}">
+          </div>
+        </div>`
+      return html;
+    } else {
+      let html =
       `<div class="mainmes" data-message-id=${message.id}>
         <div class="mainmes__arrive">
           <div class="mainmes__arrive--name">
@@ -15,28 +34,8 @@ $(function(){
           <p class="Message__content">
             ${message.content}
           </p>
-          <img class="Message__image" src="${message.image}">
         </div>
       </div>`
-    return html;
-  } else {
-    let html =
-    `<div class="mainmes" data-message-id=${message.id}>
-      <div class="mainmes__arrive">
-        <div class="mainmes__arrive--name">
-          ${message.user_name}
-        </div>
-        <div class="mainmes__arrive--date">
-          ${message.created_at}
-        </div>
-      </div>
-      <div class="mainmes__nmes">
-        <p class="Message__content">
-          ${message.content}
-        </p>
-        <img class="Message__image" src="${message.image}">
-      </div>
-    </div>`
     return html;
   };
 }
@@ -55,13 +54,13 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.cmiddle').append(html);    
-      $('form')[0].reset();
+      $('#form-cfooter')[0].reset();
       $('.cmiddle').animate({ scrollTop: $('.cmiddle')[0].scrollHeight});  
-      $('#form-cfooter').prop("disabled", false);
+      $('.cfooter').prop("disabled", false);
     })
     .fail(function() {
       alert('メッセージを送信できません');
-      $('#form-cfooter').prop("disabled", false);
+      $('.cfooter').prop("disabled", false);
     });
   });
 });
